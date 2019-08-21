@@ -12,11 +12,11 @@ public class State {
 
     private String id = "";
     private ArrayList<String> messages;
-    private ArrayList keywords;
+    private ArrayList<Keyword> keywords;
     public String argument = "";
 
     // default constructor, constructs State object
-    public State(String id, ArrayList messages, ArrayList keywords) {
+    public State(String id, ArrayList<String> messages, ArrayList<Keyword> keywords) {
         this.id = id;
         this.messages = messages;
         this.keywords = keywords;
@@ -39,7 +39,12 @@ public class State {
     }
 
     // get state keywords
-    public ArrayList getKeywords() {
+    public ArrayList<Keyword> getKeywords() {
         return keywords;
     }
+
+	@Override
+	public String toString() {
+		return "State [id=" + id + ", messages=" + messages + ", keywords=" + keywords + ", argument=" + argument + "]";
+	}
 }

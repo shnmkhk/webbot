@@ -111,7 +111,7 @@ public class Bot {
                 // create a new state for new trained data
                  ArrayList<String> messages = new ArrayList<String>();
                 messages.add(result);
-                State myState = new State(String.valueOf(parser.stateCounter),messages,new ArrayList());
+                State myState = new State(String.valueOf(parser.stateCounter),messages,new ArrayList<Keyword>());
                 parser.addState(myState);
 
                 // add the new trained keyword

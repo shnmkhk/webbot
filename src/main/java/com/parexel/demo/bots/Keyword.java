@@ -26,4 +26,11 @@ public class Keyword {
         this.points = points;
         this.learn = learn;
     }
+
+	@Override
+	public String toString() {
+		return "Keyword [keyword=" + keyword + ", target=" + target + ", className=" + className + ", arg=" + arg
+				+ ", variable=" + variable + ", variableValue=" + variableValue + ", learn=" + learn + ", points="
+				+ points + "]";
+	}
 }

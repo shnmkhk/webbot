@@ -20,7 +20,7 @@ public class DataParser {
 
     private Document dom;
     private HashMap<String, State> states = new HashMap<String, State>();
-    private ArrayList<String> invalidMessages = new ArrayList();
+    private ArrayList<String> invalidMessages = new ArrayList<String>();
     private int invalidMessageIndex = 0;
     public  int stateCounter = 1000;
 
@@ -72,7 +72,7 @@ public class DataParser {
                 String id = el.getAttribute("id");
 
                 // get all state messages
-                ArrayList messages = new ArrayList();
+                ArrayList<String> messages = new ArrayList<String>();
                 NodeList messagesNodeList = el.getElementsByTagName("message");
 
                 // if messages node is not null and has children
@@ -90,7 +90,7 @@ public class DataParser {
                 }
 
                 // get keywords in the current state
-                ArrayList keywords = getKeywords(el);
+                ArrayList<Keyword> keywords = getKeywords(el);
 
                 // construct a new State object
                 State state = new State(id, messages, keywords);
@@ -115,10 +115,10 @@ public class DataParser {
     }
 
     // get all keywords in an State tag
-    public ArrayList getKeywords(Element ele) {
+    public ArrayList<Keyword> getKeywords(Element ele) {
 
         // construct keywords arraylist
-        ArrayList keywords = new ArrayList();
+        ArrayList<Keyword> keywords = new ArrayList<Keyword>();
 
         // get all nodes by keyword tag name
         NodeList nl = ele.getElementsByTagName("keyword");
